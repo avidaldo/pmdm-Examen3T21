@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.navigateUp
 import com.example.examen3t21.databinding.FragmentListadoBinding
 import com.example.examen3t21.placeholder.Album
+import com.google.android.material.snackbar.Snackbar
 
 
 class ListaFragment : Fragment() {
@@ -41,9 +43,8 @@ class ListaFragment : Fragment() {
         }
 
         discosViewModel.albumsLiveData.observe(viewLifecycleOwner) {
-            it?.let {
-                discosAdapter.submitList(it)
-            }
+            if (it.isNullOrEmpty()) showListaVacia()
+            else discosAdapter.submitList(it)
         }
 
 /*        binding.fab.setOnClickListener {
@@ -51,6 +52,13 @@ class ListaFragment : Fragment() {
         }*/
 
     }
+
+    private fun showListaVacia() = Snackbar.make(binding.root,
+        "No hay discos en la selección actual", Snackbar.LENGTH_LONG)
+        .setAction("Volver") {
+            findNavController().navigateUp()
+        }.show()
+
 
     private fun onClickInfo(album: Album) {
         discosViewModel.updateAlbumSeleccionadoLiveData(album)

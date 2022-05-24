@@ -36,7 +36,8 @@ class InfoFragment : Fragment() {
 
         binding.removeButton.setOnClickListener {
             discosViewModel.removeAlbum(album)
-            findNavController().navigate(InfoFragmentDirections.actionInfoFragmentToItemFragment())
+            //findNavController().navigate(InfoFragmentDirections.actionInfoFragmentToItemFragment())
+            findNavController().navigateUp()
         }
     }
 

@@ -7,9 +7,7 @@ val IMAGE_NO_AVALIABLE_RESOURCE = R.drawable.disco
 
 
 class Album(val id: Int, val titulo: String, val autor: String, val imageRes: Int?, val descRes: Int) {
-    enum class Genero {
-        Rock, Blues, Jazz
-    }
+    enum class Genero { Rock, Blues, Jazz }
 
     override fun toString(): String {
         return "$titulo - $autor"
@@ -18,10 +16,15 @@ class Album(val id: Int, val titulo: String, val autor: String, val imageRes: In
 }
 
 object dataSource {
-    val listaRock = getListadoRock()
-    val listaBlues = getListadoBlues()
-    val listaJazz = getListadoJazz()
+    var listaRock = getListadoRock()
+    var listaBlues = getListadoBlues()
+    var listaJazz = getListadoJazz()
 
+    fun reset() {
+        listaRock = getListadoRock()
+        listaBlues = getListadoBlues()
+        listaJazz = getListadoJazz()
+    }
 
     fun getlistaFromGenero(genero: Album.Genero) = when (genero) {
         Album.Genero.Rock -> listaRock
@@ -31,8 +34,6 @@ object dataSource {
     }
 
 }
-
-
 
 
 private var idIndex = 1
