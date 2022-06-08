@@ -6,7 +6,6 @@ import com.example.examen3t21.placeholder.*
 
 class DiscosViewModel() : ViewModel() {
 
-    val generoLiveData = MutableLiveData<Album.Genero>()
     val albumsLiveData = MutableLiveData<MutableList<Album>>()
     val albumSeleccionadoLiveData = MutableLiveData<Album>()
 
@@ -14,14 +13,13 @@ class DiscosViewModel() : ViewModel() {
         albumSeleccionadoLiveData.value = album
     }
 
-
     fun updateAlbumsLiveData(list: MutableList<Album>) {
         albumsLiveData.value = list
     }
 
-    fun updateGeneroLiveData(genero : Album.Genero){
-        generoLiveData.value = genero
-        updateAlbumsLiveData(dataSource.getlistaFromGenero(genero))
+    fun updateAlbumsLiveData(genero: Album.Genero?) {
+        updateAlbumsLiveData(genero?.let { dataSource.getlistaFromGenero(it) }
+            ?: dataSource.getAll())
     }
 
     fun addAlbum(titulo: String, autor: String, image: Int?, description: Int) {
@@ -35,10 +33,7 @@ class DiscosViewModel() : ViewModel() {
     }
 
     fun removeAlbum(album: Album) =
-        dataSource.getlistaFromGenero(generoLiveData.value!!)
-            .apply {
-                remove(album)
-            }
+        dataSource.removeAlbum(album)
             .let {
                 updateAlbumsLiveData(it)
             }
