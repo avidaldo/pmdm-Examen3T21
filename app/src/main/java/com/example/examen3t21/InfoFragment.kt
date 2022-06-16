@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.examen3t21.databinding.FragmentInfoBinding
-import com.example.examen3t21.placeholder.IMAGE_NO_AVALIABLE_RESOURCE
 
 
 class InfoFragment : Fragment() {

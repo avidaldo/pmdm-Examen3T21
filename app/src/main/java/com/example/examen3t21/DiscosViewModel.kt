@@ -2,11 +2,10 @@ package com.example.examen3t21
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.examen3t21.placeholder.*
 
 class DiscosViewModel() : ViewModel() {
 
-    val generoLiveData = MutableLiveData<Album.Genero>()
+    val generoLiveData = MutableLiveData<Album.Genero>() // TODO: Nullable?
     val albumsLiveData = MutableLiveData<MutableList<Album>>()
     val albumSeleccionadoLiveData = MutableLiveData<Album>()
 

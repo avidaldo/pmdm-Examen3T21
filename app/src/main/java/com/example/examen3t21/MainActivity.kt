@@ -1,18 +1,15 @@
 package com.example.examen3t21
 
 import android.os.Bundle
-import android.text.Layout
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
-import androidx.navigation.NavController
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
 import com.example.examen3t21.databinding.ActivityMainBinding
-import com.example.examen3t21.placeholder.dataSource
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

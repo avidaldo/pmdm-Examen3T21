@@ -1,23 +1,15 @@
 package com.example.examen3t21
 
 import android.os.Bundle
-import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.examen3t21.databinding.FragmentMainBinding
-import com.example.examen3t21.placeholder.Album
-import com.example.examen3t21.placeholder.getListadoBlues
-import com.example.examen3t21.placeholder.getListadoJazz
-import com.example.examen3t21.placeholder.getListadoRock
-import java.lang.RuntimeException
-import java.util.*
 
 
 class MainFragment : Fragment() {

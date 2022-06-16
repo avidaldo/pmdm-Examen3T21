@@ -1,9 +1,8 @@
-package com.example.examen3t21.placeholder
+package com.example.examen3t21
 
-import com.example.examen3t21.R
 import java.lang.RuntimeException
 
-val IMAGE_NO_AVALIABLE_RESOURCE = R.drawable.disco
+const val IMAGE_NO_AVALIABLE_RESOURCE = R.drawable.disco
 
 
 class Album(val id: Int, val titulo: String, val autor: String, val imageRes: Int?, val descRes: Int) {

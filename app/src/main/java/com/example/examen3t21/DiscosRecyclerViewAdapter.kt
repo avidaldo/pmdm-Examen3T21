@@ -7,9 +7,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.example.examen3t21.databinding.ItemBinding
 
-import com.example.examen3t21.placeholder.Album
-import com.example.examen3t21.placeholder.IMAGE_NO_AVALIABLE_RESOURCE
-
 
 class DiscosRecyclerViewAdapter(
     val onClickInfo: (Album) -> Unit
